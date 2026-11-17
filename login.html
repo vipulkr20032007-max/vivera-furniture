@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In • VIVERO Living Atelier</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-monogram">V</div>
+                    <div>
+                        VIVERO
+                        <span class="brand-subtitle">Living Atelier</span>
+                    </div>
+                </a>
+
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link-item">Home</a></li>
+                        <li><a href="shop.html" class="nav-link-item">Catalogue</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-actions">
+                    <a href="cart.html" class="nav-icon-btn" title="Cart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <span class="badge-counter cart-count-badge" style="display: none;">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Page Card Container -->
+    <main class="auth-page-wrapper">
+        <div class="auth-card">
+            <div class="text-center mb-4">
+                <span class="section-subtitle">Client Portal</span>
+                <h1 class="serif-title fs-2 mb-2">Welcome to VIVERO</h1>
+                <p class="text-muted small">Sign in to manage your orders, saved pieces, or access the management suite.</p>
+            </div>
+
+            <!-- Demo Quick Credentials Box for Easy Grading / Testing -->
+            <div class="demo-credentials-box">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="small fw-bold text-uppercase tracking-wider">Demo Credentials</span>
+                    <span class="badge bg-secondary-c text-white" style="font-size: 0.65rem;">Academic Sandbox</span>
+                </div>
+                <p class="extra-small text-muted mb-2">Click any account below to instantly pre-fill credentials:</p>
+                <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-luxury-light btn-sm flex-grow-1" id="btn-fill-customer" style="font-size: 0.75rem;">
+                        👤 Fill Customer
+                    </button>
+                    <button type="button" class="btn btn-luxury-primary btn-sm flex-grow-1" id="btn-fill-admin" style="font-size: 0.75rem;">
+                        🛡️ Fill Admin
+                    </button>
+                </div>
+            </div>
+
+            <!-- Error / Feedback Alert Box -->
+            <div id="login-alert-box" class="alert p-3 rounded mb-3 small" style="display: none;"></div>
+
+            <!-- Form -->
+            <form id="login-form">
+                <div class="form-group">
+                    <label class="form-label" for="login-email">Email Address *</label>
+                    <input type="email" id="login-email" class="form-control" placeholder="name@domain.com" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <div class="d-flex justify-content-between">
+                        <label class="form-label" for="login-password">Password *</label>
+                        <a href="#" class="extra-small text-accent" id="link-forgot-pass">Forgot Password?</a>
+                    </div>
+                    <input type="password" id="login-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <label class="filter-checkbox-label small">
+                        <input type="checkbox" id="login-remember">
+                        <span>Remember this device</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-luxury-primary btn-lg w-100 mb-3" id="btn-login-submit">
+                    Sign In to Atelier &rarr;
+                </button>
+
+                <div class="text-center pt-3 border-top">
+                    <span class="small text-muted">New to VIVERO Living? </span>
+                    <a href="register.html" class="small fw-bold text-secondary text-decoration-underline">Create an Account</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer" id="footer">
+        <div class="container text-center">
+            <p class="small text-muted mb-0">&copy; 2026 VIVERO Luxury Living. Frontend E-Commerce Demonstration.</p>
+        </div>
+    </footer>
+
+    <!-- Core Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Login Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('login-form');
+            const alertBox = document.getElementById('login-alert-box');
+            const emailInput = document.getElementById('login-email');
+            const passInput = document.getElementById('login-password');
+
+            // Quick Auto-fill buttons
+            document.getElementById('btn-fill-customer').addEventListener('click', () => {
+                emailInput.value = 'customer@gmail.com';
+                passInput.value = 'Customer123';
+                Cart.showToast('Customer demo credentials filled.', 'info');
+            });
+
+            document.getElementById('btn-fill-admin').addEventListener('click', () => {
+                emailInput.value = 'admin@furniture.com';
+                passInput.value = 'Admin123';
+                Cart.showToast('Admin demo credentials filled.', 'info');
+            });
+
+            // Forgot Password Link
+            document.getElementById('link-forgot-pass').addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('DEMO MODE: Use credentials displayed in the Demo Credentials box (Customer123 or Admin123).');
+            });
+
+            // Form Submit
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alertBox.style.display = 'none';
+
+                const email = emailInput.value.trim();
+                const password = passInput.value;
+                const remember = document.getElementById('login-remember').checked;
+
+                const res = Auth.login(email, password, remember);
+
+                if (res.success) {
+                    alertBox.className = 'p-3 rounded mb-3 small bg-success text-white';
+                    alertBox.textContent = res.message;
+                    alertBox.style.display = 'block';
+
+                    Cart.showToast(res.message, 'success');
+
+                    // Check if redirect specified in URL query
+                    const params = new URLSearchParams(window.location.search);
+                    const redirect = params.get('redirect');
+
+                    setTimeout(() => {
+                        if (redirect) {
+                            window.location.href = redirect;
+                        } else if (res.user.role === 'admin') {
+                            window.location.href = 'admin.html';
+                        } else {
+                            window.location.href = 'index.html';
+                        }
+                    }, 800);
+                } else {
+                    alertBox.className = 'p-3 rounded mb-3 small bg-danger text-white';
+                    alertBox.textContent = res.message;
+                    alertBox.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

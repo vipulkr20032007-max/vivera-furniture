@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details • VIVERO Living Atelier</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <span>✨ <strong>COMPLIMENTARY WHITE-GLOVE FREIGHT</strong> on all curated orders above ₹10,000 | Use Code: <strong>LUXURY10</strong></span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="nav-inner">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-monogram">V</div>
+                    <div>
+                        VIVERO
+                        <span class="brand-subtitle">Living Atelier</span>
+                    </div>
+                </a>
+
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link-item">Home</a></li>
+                        <li><a href="shop.html" class="nav-link-item active">Shop</a></li>
+                        <li><a href="shop.html?category=Sofas" class="nav-link-item">Sofas</a></li>
+                        <li><a href="shop.html?category=Beds" class="nav-link-item">Beds</a></li>
+                        <li><a href="shop.html?category=Dining+Tables" class="nav-link-item">Dining</a></li>
+                        <li><a href="index.html#why-us" class="nav-link-item">About Us</a></li>
+                        <li><a href="#footer" class="nav-link-item">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="nav-icon-btn btn-open-search" title="Search Collection">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+
+                    <a href="wishlist.html" class="nav-icon-btn" title="Saved Wishlist">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        <span class="badge-counter wishlist-count-badge" style="display: none;">0</span>
+                    </a>
+
+                    <a href="cart.html" class="nav-icon-btn" title="Shopping Cart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <span class="badge-counter cart-count-badge" style="display: none;">0</span>
+                    </a>
+
+                    <div id="nav-user-container"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-menu-drawer">
+        <div>
+            <div class="d-flex align-items-center justify-content-between pb-3 border-bottom">
+                <a href="index.html" class="brand-logo fs-4">
+                    <div class="brand-monogram" style="width:32px; height:32px; font-size:1rem;">V</div>
+                    VIVERO
+                </a>
+                <button id="mobile-menu-close" style="font-size: 1.5rem; color: var(--color-muted);">&times;</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop All Pieces</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="cart.html">Shopping Cart</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="admin.html">Admin Portal</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mobile-overlay" id="mobile-menu-overlay"></div>
+
+    <!-- Product Detail Container -->
+    <main class="container product-detail-wrapper" id="product-detail-container">
+        <!-- Breadcrumbs -->
+        <nav class="shop-breadcrumbs mb-4">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="shop.html">Shop</a>
+            <span>/</span>
+            <span id="breadcrumb-category" class="text-muted">Category</span>
+            <span>/</span>
+            <span id="breadcrumb-name" class="text-secondary fw-semibold">Piece Name</span>
+        </nav>
+
+        <!-- Main Product Presentation Layout -->
+        <div class="product-detail-layout">
+            <!-- Left: Interactive Gallery -->
+            <div class="product-gallery-box">
+                <div class="product-gallery-main">
+                    <img id="main-product-img" src="" alt="Product Main Image" onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1000&q=80'">
+                </div>
+                <div class="product-gallery-thumbs" id="product-gallery-thumbs">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Right: Details & Purchase Options -->
+            <div class="product-info-col">
+                <span class="product-detail-category" id="prod-detail-category">SOFAS</span>
+                <h1 class="product-detail-title" id="prod-detail-title">Loading Piece...</h1>
+
+                <div class="product-detail-rating">
+                    <div id="prod-detail-stars">★★★★★</div>
+                    <span class="small fw-semibold text-secondary" id="prod-detail-rating-num">4.9</span>
+                    <a href="#reviews-section" class="small text-muted text-decoration-underline" id="prod-detail-review-link">(38 Client Reviews)</a>
+                    <span class="badge bg-sand text-dark ms-2" id="prod-detail-stock-badge">In Stock (12 Available)</span>
+                </div>
+
+                <div class="product-detail-pricing">
+                    <span class="detail-price" id="prod-detail-price">₹74,999</span>
+                    <span class="detail-orig-price" id="prod-detail-orig-price">₹89,999</span>
+                    <span class="badge-discount" id="prod-detail-discount-tag">-17%</span>
+                </div>
+
+                <p class="product-detail-desc" id="prod-detail-desc">
+                    Meticulously crafted with timeless luxury aesthetics.
+                </p>
+
+                <!-- Color Swatch Selector -->
+                <div class="product-color-selector">
+                    <label class="form-label d-flex justify-content-between">
+                        <span>Selected Finish: <strong id="selected-color-name">Oatmeal Bouclé</strong></span>
+                    </label>
+                    <div class="color-swatches-row" id="color-swatches-container">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Quantity & Actions Row -->
+                <div class="purchase-controls-row">
+                    <div class="quantity-stepper">
+                        <button class="stepper-btn" id="stepper-minus" aria-label="Decrease quantity">&minus;</button>
+                        <span class="stepper-value" id="stepper-value">1</span>
+                        <button class="stepper-btn" id="stepper-plus" aria-label="Increase quantity">+</button>
+                    </div>
+
+                    <button class="btn btn-luxury-primary btn-lg flex-grow-1" id="btn-add-to-cart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        Add to Shopping Bag
+                    </button>
+
+                    <button class="product-wishlist-btn" id="btn-detail-wishlist" style="position: static; width: 50px; height: 50px;" title="Save to Wishlist">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    </button>
+                </div>
+
+                <!-- Specifications Accordion -->
+                <div class="product-specs-accordion">
+                    <div class="accordion-item open">
+                        <button class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                            <span>Materials & Craftsmanship</span>
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-body" id="prod-spec-materials">
+                            Solid Birch Frame, Italian Wool Bouclé, Down-Feather Fill.
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                            <span>Dimensions & Spatial Footprint</span>
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-body" id="prod-spec-dimensions">
+                            W 230cm × D 98cm × H 76cm
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                            <span>White Glove Delivery & Care</span>
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-body">
+                            Delivered in climate-protective wooden crates by our specialized logistics team. Unpacked and positioned in your room of choice with debris removal included. For care, gently vacuum upholstery weekly with a soft brush attachment and spot clean with distilled water.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customer Ratings & Reviews Section -->
+        <section class="reviews-section" id="reviews-section">
+            <div class="section-header text-start mb-4">
+                <span class="section-subtitle">Client Experiences</span>
+                <h2 class="section-title">Verified Customer Reviews</h2>
+            </div>
+
+            <!-- Overall Score Breakdown -->
+            <div class="reviews-summary-row">
+                <div>
+                    <div class="big-rating-number" id="review-score-big">4.9</div>
+                    <div id="review-stars-big" class="mb-2">★★★★★</div>
+                    <p class="text-muted small">Based on <span id="review-total-count">38</span> verified atelier purchases</p>
+                </div>
+
+                <!-- Submit Review Form Card -->
+                <div class="bg-sand p-4 rounded border">
+                    <h4 class="font-serif fs-5 mb-2">Write a Client Review</h4>
+                    <p class="text-muted small mb-3">Share your architectural styling experience with fellow collectors.</p>
+
+                    <form id="add-review-form">
+                        <div class="mb-3">
+                            <label class="form-label">Your Rating (1 to 5 Stars):</label>
+                            <div class="star-rating-picker">
+                                <input type="radio" id="star5" name="reviewRating" value="5" checked><label for="star5" title="5 Stars">★</label>
+                                <input type="radio" id="star4" name="reviewRating" value="4"><label for="star4" title="4 Stars">★</label>
+                                <input type="radio" id="star3" name="reviewRating" value="3"><label for="star3" title="3 Stars">★</label>
+                                <input type="radio" id="star2" name="reviewRating" value="2"><label for="star2" title="2 Stars">★</label>
+                                <input type="radio" id="star1" name="reviewRating" value="1"><label for="star1" title="1 Star">★</label>
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label class="form-label">Your Name</label>
+                                <input type="text" id="review-user-name" class="form-control" placeholder="e.g. Radhika Kapoor" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Your Email</label>
+                                <input type="email" id="review-user-email" class="form-control" placeholder="e.g. radhika@gmail.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Review Title</label>
+                            <input type="text" id="review-title" class="form-control" placeholder="e.g. Exceptional joinery and pure comfort" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Your Feedback</label>
+                            <textarea id="review-comment" class="form-control" rows="3" placeholder="Describe the materials, craftsmanship, and how this piece fits your room..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-luxury-primary">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- List of existing reviews -->
+            <div class="reviews-list" id="product-reviews-list">
+                <!-- Injected dynamically -->
+            </div>
+        </section>
+
+        <!-- Related Pieces Section -->
+        <section class="my-5">
+            <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+                <div>
+                    <span class="section-subtitle">Harmonious Pairings</span>
+                    <h2 class="section-title mb-0">Complementary Living Pieces</h2>
+                </div>
+                <a href="shop.html" class="btn btn-luxury-outline">Browse Catalogue &rarr;</a>
+            </div>
+
+            <div class="products-grid" id="related-products-grid">
+                <!-- Injected dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer" id="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo text-white">
+                        <div class="brand-monogram">V</div>
+                        VIVERO
+                    </a>
+                    <p>Elevating modern interiors through organic Scandinavian design, authentic Italian marble, and generational woodworking craftsmanship.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop All Pieces</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="orders.html">My Orders</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Concierge</h4>
+                    <ul class="footer-links-list">
+                        <li class="text-white small">Studio 14, Heritage Quarters, MG Road, Bengaluru</li>
+                        <li class="text-white small mt-1">+91 1800 240 8899</li>
+                        <li class="small text-muted mt-2">concierge@viveroluxury.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Project Notice</h4>
+                    <p class="small text-muted">Academic frontend demonstrator for engineering evaluation.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 VIVERO Luxury Living Private Limited. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Search Modal -->
+    <div class="modal-backdrop-custom" id="global-search-modal">
+        <div class="modal-content-custom">
+            <span class="modal-close-btn" id="search-modal-close">&times;</span>
+            <div class="mb-4">
+                <span class="section-subtitle">Catalog Search</span>
+                <h3 class="serif-title">Search Living Pieces</h3>
+            </div>
+            <input type="text" id="global-search-input" class="form-control form-control-lg" placeholder="Type piece name or category...">
+            <div id="search-modal-results" class="mt-3"></div>
+        </div>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Product Details Page Logic -->
+    <script>
+        const ProductDetailController = {
+            product: null,
+            selectedColor: null,
+            quantity: 1,
+
+            init() {
+                const params = new URLSearchParams(window.location.search);
+                const id = params.get('id') || 'prod-1';
+                this.product = ProductDB.getById(id);
+
+                if (!this.product) {
+                    document.getElementById('product-detail-container').innerHTML = `
+                        <div class="text-center py-5">
+                            <h2 class="serif-title mb-3">Piece Not Found</h2>
+                            <p class="text-muted mb-4">The luxury furniture piece you are looking for has been archived or does not exist.</p>
+                            <a href="shop.html" class="btn btn-luxury-primary">Return to Catalog</a>
+                        </div>
+                    `;
+                    return;
+                }
+
+                this.selectedColor = this.product.colors[0]?.name || 'Standard';
+                this.renderDetails();
+                this.renderGallery();
+                this.renderColorSwatches();
+                this.renderReviews();
+                this.renderRelatedProducts();
+                this.setupActions();
+            },
+
+            renderDetails() {
+                const p = this.product;
+                document.title = `${p.name} • VIVERO Living Atelier`;
+
+                document.getElementById('breadcrumb-category').textContent = p.category;
+                document.getElementById('breadcrumb-name').textContent = p.name;
+                document.getElementById('prod-detail-category').textContent = p.category;
+                document.getElementById('prod-detail-title').textContent = p.name;
+                document.getElementById('prod-detail-price').textContent = ProductDB.formatINR(p.price);
+                
+                if (p.originalPrice > p.price) {
+                    document.getElementById('prod-detail-orig-price').textContent = ProductDB.formatINR(p.originalPrice);
+                    document.getElementById('prod-detail-discount-tag').textContent = `-${p.discount}%`;
+                    document.getElementById('prod-detail-discount-tag').style.display = 'inline-block';
+                } else {
+                    document.getElementById('prod-detail-orig-price').style.display = 'none';
+                    document.getElementById('prod-detail-discount-tag').style.display = 'none';
+                }
+
+                document.getElementById('prod-detail-desc').textContent = p.description;
+                document.getElementById('prod-detail-stars').innerHTML = App.renderStars(p.rating);
+                document.getElementById('prod-detail-rating-num').textContent = p.rating;
+                document.getElementById('prod-detail-review-link').textContent = `(${p.reviewCount} Client Reviews)`;
+
+                const stockBadge = document.getElementById('prod-detail-stock-badge');
+                if (p.stock > 0) {
+                    stockBadge.textContent = `In Stock (${p.stock} Available)`;
+                    stockBadge.className = 'badge bg-sand text-dark ms-2';
+                } else {
+                    stockBadge.textContent = 'Bespoke Order / Out of Stock';
+                    stockBadge.className = 'badge bg-danger text-white ms-2';
+                }
+
+                document.getElementById('prod-spec-materials').textContent = p.material;
+                document.getElementById('prod-spec-dimensions').textContent = p.dimensions;
+                document.getElementById('selected-color-name').textContent = this.selectedColor;
+
+                // Sync Wishlist state
+                const wishBtn = document.getElementById('btn-detail-wishlist');
+                const isSaved = Wishlist.has(p.id);
+                wishBtn.classList.toggle('active', isSaved);
+                wishBtn.querySelector('svg').setAttribute('fill', isSaved ? '#C2847A' : 'none');
+            },
+
+            renderGallery() {
+                const mainImg = document.getElementById('main-product-img');
+                const thumbsContainer = document.getElementById('product-gallery-thumbs');
+                const images = this.product.images;
+
+                mainImg.src = images[0];
+
+                thumbsContainer.innerHTML = images.map((img, idx) => `
+                    <div class="gallery-thumb ${idx === 0 ? 'active' : ''}" onclick="ProductDetailController.switchImage('${img}', this)">
+                        <img src="${img}" alt="Angle ${idx + 1}">
+                    </div>
+                `).join('');
+            },
+
+            switchImage(url, thumbElement) {
+                document.getElementById('main-product-img').src = url;
+                document.querySelectorAll('.gallery-thumb').forEach(el => el.classList.remove('active'));
+                thumbElement.classList.add('active');
+            },
+
+            renderColorSwatches() {
+                const container = document.getElementById('color-swatches-container');
+                const colors = this.product.colors || [{ name: 'Standard', hex: '#EDE5D8' }];
+
+                container.innerHTML = colors.map((c, idx) => `
+                    <button type="button" class="color-swatch-btn ${idx === 0 ? 'active' : ''}" 
+                        style="background-color: ${c.hex};" 
+                        title="${c.name}"
+                        onclick="ProductDetailController.selectColor('${c.name}', this)">
+                    </button>
+                `).join('');
+            },
+
+            selectColor(name, btn) {
+                this.selectedColor = name;
+                document.getElementById('selected-color-name').textContent = name;
+                document.querySelectorAll('.color-swatch-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            },
+
+            setupActions() {
+                // Stepper
+                document.getElementById('stepper-minus').addEventListener('click', () => {
+                    if (this.quantity > 1) {
+                        this.quantity--;
+                        document.getElementById('stepper-value').textContent = this.quantity;
+                    }
+                });
+
+                document.getElementById('stepper-plus').addEventListener('click', () => {
+                    if (this.quantity < this.product.stock) {
+                        this.quantity++;
+                        document.getElementById('stepper-value').textContent = this.quantity;
+                    } else {
+                        Cart.showToast(`Only ${this.product.stock} pieces are available in atelier stock.`, 'info');
+                    }
+                });
+
+                // Add to Cart
+                document.getElementById('btn-add-to-cart').addEventListener('click', () => {
+                    Cart.addItem(this.product.id, this.quantity, this.selectedColor);
+                });
+
+                // Wishlist Toggle
+                document.getElementById('btn-detail-wishlist').addEventListener('click', (e) => {
+                    const btn = document.getElementById('btn-detail-wishlist');
+                    const added = Wishlist.toggle(this.product.id);
+                    btn.classList.toggle('active', added);
+                    btn.querySelector('svg').setAttribute('fill', added ? '#C2847A' : 'none');
+                });
+
+                // Review Submission Form
+                const reviewForm = document.getElementById('add-review-form');
+                if (reviewForm) {
+                    // Pre-fill user name if logged in
+                    const user = Auth.getCurrentUser();
+                    if (user) {
+                        document.getElementById('review-user-name').value = user.name;
+                        document.getElementById('review-user-email').value = user.email;
+                    }
+
+                    reviewForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        this.handleReviewSubmit();
+                    });
+                }
+            },
+
+            handleReviewSubmit() {
+                const ratingEl = document.querySelector('input[name="reviewRating"]:checked');
+                const rating = ratingEl ? parseInt(ratingEl.value, 10) : 5;
+                const name = document.getElementById('review-user-name').value.trim();
+                const email = document.getElementById('review-user-email').value.trim();
+                const title = document.getElementById('review-title').value.trim();
+                const comment = document.getElementById('review-comment').value.trim();
+
+                if (!name || !email || !title || !comment) {
+                    Cart.showToast('Please fill out all review fields.', 'error');
+                    return;
+                }
+
+                ProductDB.addReview({
+                    productId: this.product.id,
+                    userName: name,
+                    userEmail: email,
+                    rating,
+                    title,
+                    comment
+                });
+
+                Cart.showToast('Thank you! Your verified client review has been recorded.', 'success');
+
+                // Refresh product state and re-render reviews
+                this.product = ProductDB.getById(this.product.id);
+                this.renderDetails();
+                this.renderReviews();
+                document.getElementById('add-review-form').reset();
+            },
+
+            renderReviews() {
+                const reviews = ProductDB.getReviews(this.product.id);
+                const list = document.getElementById('product-reviews-list');
+                const totalCountEl = document.getElementById('review-total-count');
+                const scoreBigEl = document.getElementById('review-score-big');
+                const starsBigEl = document.getElementById('review-stars-big');
+
+                totalCountEl.textContent = reviews.length;
+                scoreBigEl.textContent = this.product.rating;
+                starsBigEl.innerHTML = App.renderStars(this.product.rating);
+
+                if (reviews.length === 0) {
+                    list.innerHTML = `
+                        <div class="text-center py-4 text-muted">
+                            <p>No reviews yet for this piece. Be the first collector to review!</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                list.innerHTML = reviews.map(r => `
+                    <div class="review-item">
+                        <div class="review-meta">
+                            <div>
+                                <span class="review-author">${r.userName}</span>
+                                ${r.verified ? '<span class="badge bg-sand text-accent ms-2">✓ Verified Buyer</span>' : ''}
+                            </div>
+                            <span class="review-date">${r.date}</span>
+                        </div>
+                        <div class="mb-2 text-warning">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+                        <h4 class="fs-6 fw-bold mb-1">${r.title || ''}</h4>
+                        <p class="text-muted small mb-0">${r.comment}</p>
+                    </div>
+                `).join('');
+            },
+
+            renderRelatedProducts() {
+                const related = ProductDB.getAll()
+                    .filter(p => p.category === this.product.category && p.id !== this.product.id)
+                    .slice(0, 4);
+
+                const container = document.getElementById('related-products-grid');
+                if (related.length > 0) {
+                    container.innerHTML = related.map(p => App.createProductCard(p)).join('');
+                } else {
+                    const fallback = ProductDB.getAll().filter(p => p.id !== this.product.id).slice(0, 4);
+                    container.innerHTML = fallback.map(p => App.createProductCard(p)).join('');
+                }
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            ProductDetailController.init();
+        });
+    </script>
+</body>
+</html>
+

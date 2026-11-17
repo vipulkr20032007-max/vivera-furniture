@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIVERO • Luxury Furniture & Architectural Living</title>
+    <meta name="description" content="Discover handcrafted luxury furniture, Scandinavian minimalism, and bespoke interior masterpieces at VIVERO.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <span>✨ <strong>COMPLIMENTARY WHITE-GLOVE FREIGHT</strong> on all curated orders above ₹10,000 | Use Code: <strong>LUXURY10</strong></span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="nav-inner">
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+
+                <!-- Brand Logo -->
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-monogram">V</div>
+                    <div>
+                        VIVERO
+                        <span class="brand-subtitle">Living Atelier</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link-item active">Home</a></li>
+                        <li><a href="shop.html" class="nav-link-item">Shop</a></li>
+                        <li><a href="shop.html?category=Sofas" class="nav-link-item">Sofas</a></li>
+                        <li><a href="shop.html?category=Beds" class="nav-link-item">Beds</a></li>
+                        <li><a href="shop.html?category=Dining+Tables" class="nav-link-item">Dining</a></li>
+                        <li><a href="#why-us" class="nav-link-item">About Us</a></li>
+                        <li><a href="#footer" class="nav-link-item">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Action Controls (Search, Wishlist, Cart, Account) -->
+                <div class="nav-actions">
+                    <!-- Search Icon Button -->
+                    <button class="nav-icon-btn btn-open-search" title="Search Collection (Press /)">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+
+                    <!-- Wishlist Icon Button with Badge -->
+                    <a href="wishlist.html" class="nav-icon-btn" title="Saved Wishlist">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        <span class="badge-counter wishlist-count-badge" style="display: none;">0</span>
+                    </a>
+
+                    <!-- Shopping Cart Icon Button with Badge -->
+                    <a href="cart.html" class="nav-icon-btn" title="Shopping Cart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <span class="badge-counter cart-count-badge" style="display: none;">0</span>
+                    </a>
+
+                    <!-- User Account / Login Button -->
+                    <div id="nav-user-container">
+                        <!-- Populated dynamically by app.js -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-menu-drawer">
+        <div>
+            <div class="d-flex align-items-center justify-content-between pb-3 border-bottom">
+                <a href="index.html" class="brand-logo fs-4">
+                    <div class="brand-monogram" style="width:32px; height:32px; font-size:1rem;">V</div>
+                    VIVERO
+                </a>
+                <button id="mobile-menu-close" style="font-size: 1.5rem; color: var(--color-muted);">&times;</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop All Furniture</a></li>
+                <li><a href="shop.html?category=Sofas">Sofas & Lounges</a></li>
+                <li><a href="shop.html?category=Beds">Beds & Mattresses</a></li>
+                <li><a href="shop.html?category=Dining+Tables">Dining Tables</a></li>
+                <li><a href="shop.html?category=Chairs">Iconic Chairs</a></li>
+                <li><a href="shop.html?category=Office+Furniture">Office Studio</a></li>
+                <li><a href="wishlist.html">My Wishlist</a></li>
+                <li><a href="cart.html">Shopping Cart</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="admin.html">Admin Portal</a></li>
+            </ul>
+        </div>
+        <div class="pt-3 border-top">
+            <p class="small text-muted mb-2">Concierge & Design Studio</p>
+            <p class="fw-semibold">+91 1800 240 8899</p>
+        </div>
+    </div>
+    <div class="mobile-overlay" id="mobile-menu-overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg-media">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=85" alt="Luxury Interior Living Room" id="hero-img">
+        </div>
+        <div class="hero-gradient-overlay"></div>
+
+        <div class="container position-relative">
+            <div class="hero-content">
+                <div class="hero-eyebrow">Autumn / Winter Atelier 2026</div>
+                <h1 class="hero-title font-serif">Transform Your Space, Elevate Your Living.</h1>
+                <p class="hero-description">
+                    Sculpted by European artisans and crafted with sustainable solid timbers, Roman travertine stone, and buttery top-grain leathers. Experience furniture designed for generations.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="shop.html" class="btn btn-luxury-primary btn-lg">Shop Now</a>
+                    <a href="#featured-categories" class="btn btn-luxury-outline btn-lg">Explore Collection</a>
+                </div>
+
+                <div class="hero-features">
+                    <div class="hero-feature-item">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <span>10-Year Warranty</span>
+                    </div>
+                    <div class="hero-feature-item">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                        <span>White-Glove Delivery</span>
+                    </div>
+                    <div class="hero-feature-item">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        <span>FSC Certified Timber</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories Section -->
+    <section class="container py-5 my-4" id="featured-categories">
+        <div class="section-header">
+            <span class="section-subtitle">Curated Sanctuaries</span>
+            <h2 class="section-title">Explore by Space & Category</h2>
+            <p class="section-lead">From statement seating to bespoke dining centerpieces, every piece is tailored to elevate your environment.</p>
+        </div>
+
+        <div class="categories-grid" id="homepage-categories-grid">
+            <!-- Populated dynamically via JS -->
+        </div>
+    </section>
+
+    <!-- Best-Selling Masterpieces -->
+    <section class="container py-5 my-4">
+        <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-5">
+            <div>
+                <span class="section-subtitle">Client Favorites</span>
+                <h2 class="section-title mb-0">Best-Selling Masterpieces</h2>
+            </div>
+            <a href="shop.html?filter=bestseller" class="btn btn-luxury-outline">View All Best Sellers &rarr;</a>
+        </div>
+
+        <div class="products-grid" id="homepage-bestsellers-grid">
+            <!-- Populated dynamically via JS -->
+        </div>
+    </section>
+
+    <!-- Special Offer & Discount Banner -->
+    <section class="container">
+        <div class="offer-banner-section">
+            <img src="https://images.unsplash.com/photo-1540518614846-7ede433c4ef0?auto=format&fit=crop&w=1200&q=80" alt="Special Offer Bedroom" class="offer-banner-bg-img">
+            <div class="offer-banner-inner">
+                <span class="badge-new mb-3 d-inline-block">Limited Architectural Season</span>
+                <h2 class="offer-banner-title font-serif">Enjoy Up to 20% Off Handcrafted Living Sets</h2>
+                <p class="offer-banner-desc">
+                    Upgrade your living room or master suite with our bespoke curated furniture collections. Experience zero-cost white glove freight and assembly.
+                </p>
+                <div class="offer-code-pill">
+                    PROMO CODE: <span>LUXURY10</span>
+                </div>
+                <div>
+                    <a href="shop.html" class="btn btn-luxury-accent btn-lg">Claim Exclusive Offer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="container py-5 my-4">
+        <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-5">
+            <div>
+                <span class="section-subtitle">Fresh from the Workshop</span>
+                <h2 class="section-title mb-0">Architectural New Arrivals</h2>
+            </div>
+            <a href="shop.html?filter=new" class="btn btn-luxury-outline">Explore Fresh Pieces &rarr;</a>
+        </div>
+
+        <div class="products-grid" id="homepage-new-arrivals-grid">
+            <!-- Populated dynamically via JS -->
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="container py-5 my-5" id="why-us">
+        <div class="section-header">
+            <span class="section-subtitle">The VIVERO Difference</span>
+            <h2 class="section-title">Designed with Integrity, Built for Generations</h2>
+            <p class="section-lead">We reject fast, disposable furniture in favor of timeless materials, thoughtful ergonomics, and enduring value.</p>
+        </div>
+
+        <div class="why-us-grid">
+            <div class="why-us-card">
+                <div class="why-us-icon-circle">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                </div>
+                <h3 class="why-us-title font-serif">Premium Quality</h3>
+                <p class="why-us-desc">Solid American white oak, Italian Carrara marble, and top-grain leathers that patina gracefully with age.</p>
+            </div>
+
+            <div class="why-us-card">
+                <div class="why-us-icon-circle">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                </div>
+                <h3 class="why-us-title font-serif">Transparent Pricing</h3>
+                <p class="why-us-desc">Direct-to-consumer craft eliminates traditional 300% showroom markups, delivering true artisan luxury.</p>
+            </div>
+
+            <div class="why-us-card">
+                <div class="why-us-icon-circle">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                </div>
+                <h3 class="why-us-title font-serif">White-Glove Delivery</h3>
+                <p class="why-us-desc">Carefully transported in climate-controlled freight, unboxed in your room of choice, and professionally assembled.</p>
+            </div>
+
+            <div class="why-us-card">
+                <div class="why-us-icon-circle">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                </div>
+                <h3 class="why-us-title font-serif">30-Day In-Home Trial</h3>
+                <p class="why-us-desc">Live with your pieces in your own natural lighting. If you aren't completely in love, return with hassle-free pickup.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="container py-5 my-4">
+        <div class="section-header">
+            <span class="section-subtitle">Real Homes & Spaces</span>
+            <h2 class="section-title">Cherished by Designers & Homeowners</h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="mb-3 text-warning">★★★★★</div>
+                <p class="testimonial-quote">"The Verona Carrara dining table transformed our Bengaluru penthouse. The marble veining is museum-grade and the timber pedestals are so grounded and architectural."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Client Avatar" class="testimonial-avatar">
+                    <div>
+                        <div class="author-name">Ananya Singhania</div>
+                        <div class="author-loc">Architectural Designer, Bengaluru</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="mb-3 text-warning">★★★★★</div>
+                <p class="testimonial-quote">"Finding a 3-seater bouclé couch with down-feather cushioning that doesn't sag was impossible until we found VIVERO. White-glove delivery assembled it in 15 minutes."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Client Avatar" class="testimonial-avatar">
+                    <div>
+                        <div class="author-name">Vikramaditya Roy</div>
+                        <div class="author-loc">Creative Director, Mumbai</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="mb-3 text-warning">★★★★★</div>
+                <p class="testimonial-quote">"The solid American oak platform bed is silent, rock-solid, and smells of organic timber. Truly an heirloom item that our children will inherit."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" alt="Client Avatar" class="testimonial-avatar">
+                    <div>
+                        <div class="author-name">Priya Nambiar</div>
+                        <div class="author-loc">Product Lead, New Delhi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="container">
+        <div class="newsletter-section">
+            <div class="newsletter-content">
+                <span class="section-subtitle">Private Salon</span>
+                <h2 class="section-title mb-3">Join the VIVERO Inner Circle</h2>
+                <p class="text-muted">Receive private invitations to preview new capsule collections, bespoke wood releases, and receive an instant <strong>10% welcome privilege</strong>.</p>
+                
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your email address..." required>
+                    <button type="submit" class="btn btn-luxury-primary">Subscribe</button>
+                </form>
+                <p class="extra-small text-muted mt-3">We respect your inbox. Unsubscribe at any time with one click.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer" id="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo text-white">
+                        <div class="brand-monogram">V</div>
+                        VIVERO
+                    </a>
+                    <p>
+                        Elevating modern interiors through organic Scandinavian design, authentic Italian marble, and generational woodworking craftsmanship.
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="#" class="footer-social-btn" title="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" class="footer-social-btn" title="Pinterest">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </a>
+                        <a href="#" class="footer-social-btn" title="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Collections</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="shop.html?category=Sofas">Bespoke Sofas</a></li>
+                        <li><a href="shop.html?category=Beds">Oak & Walnut Beds</a></li>
+                        <li><a href="shop.html?category=Dining+Tables">Marble Dining Tables</a></li>
+                        <li><a href="shop.html?category=Chairs">Lounge & Dining Chairs</a></li>
+                        <li><a href="shop.html?category=Office+Furniture">Executive Standing Desks</a></li>
+                        <li><a href="shop.html?category=Home+Decor">Architectural Lighting</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Client Care</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="orders.html">Track Order Status</a></li>
+                        <li><a href="cart.html">White Glove Shipping</a></li>
+                        <li><a href="#why-us">10-Year Warranty</a></li>
+                        <li><a href="#why-us">Returns & In-Home Trial</a></li>
+                        <li><a href="admin.html">Staff & Admin Portal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Atelier & Studio</h4>
+                    <ul class="footer-links-list">
+                        <li class="text-white small">Studio 14, Heritage Quarters, MG Road, Bengaluru, 560001</li>
+                        <li class="text-white small mt-2">concierge@viveroluxury.com</li>
+                        <li class="text-white small">+91 1800 240 8899</li>
+                        <li class="small text-muted mt-2">Monday – Saturday: 10:00 AM – 8:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 VIVERO Luxury Living Private Limited. All rights reserved.</div>
+                <div>Frontend E-Commerce Academic Project Demonstration (HTML5 &bull; CSS3 &bull; Vanilla JS)</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Search Modal -->
+    <div class="modal-backdrop-custom" id="global-search-modal">
+        <div class="modal-content-custom">
+            <span class="modal-close-btn" id="search-modal-close">&times;</span>
+            <div class="mb-4">
+                <span class="section-subtitle">Catalog Search</span>
+                <h3 class="serif-title">Search Living Pieces</h3>
+            </div>
+            <div class="position-relative mb-4">
+                <input type="text" id="global-search-input" class="form-control form-control-lg" placeholder="Type piece name, category, or material (e.g. Marble, Oak, Sofa)..." autofocus>
+            </div>
+            <div id="search-modal-results">
+                <!-- Live search results injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top-btn" id="back-to-top" title="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <!-- Core Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Homepage Controller Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Render Featured Categories
+            const categories = ProductDB.getCategories();
+            const catContainer = document.getElementById('homepage-categories-grid');
+            if (catContainer) {
+                const sampleProducts = ProductDB.getAll();
+                catContainer.innerHTML = categories.slice(0, 8).map(c => {
+                    const count = sampleProducts.filter(p => p.category.toLowerCase() === c.name.toLowerCase()).length;
+                    return `
+                        <a href="shop.html?category=${encodeURIComponent(c.name)}" class="category-card">
+                            <img src="${c.image}" alt="${c.name}" loading="lazy">
+                            <div class="category-card-overlay">
+                                <h3 class="category-card-title">${c.name}</h3>
+                                <span class="category-card-count">${count} Pieces Available</span>
+                            </div>
+                        </a>
+                    `;
+                }).join('');
+            }
+
+            // 2. Render Best Sellers
+            const bestSellers = ProductDB.getAll().filter(p => p.bestseller).slice(0, 4);
+            const bestContainer = document.getElementById('homepage-bestsellers-grid');
+            if (bestContainer) {
+                bestContainer.innerHTML = bestSellers.map(p => App.createProductCard(p)).join('');
+            }
+
+            // 3. Render New Arrivals
+            const newArrivals = ProductDB.getAll().filter(p => p.isNew).slice(0, 4);
+            const newContainer = document.getElementById('homepage-new-arrivals-grid');
+            if (newContainer) {
+                newContainer.innerHTML = newArrivals.map(p => App.createProductCard(p)).join('');
+            }
+        });
+    </script>
+</body>
+</html>
+

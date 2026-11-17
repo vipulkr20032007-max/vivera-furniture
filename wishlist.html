@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Pieces • Wishlist • VIVERO Living Atelier</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <span>✨ <strong>COMPLIMENTARY WHITE-GLOVE FREIGHT</strong> on all curated orders above ₹10,000 | Use Code: <strong>LUXURY10</strong></span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="nav-inner">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-monogram">V</div>
+                    <div>
+                        VIVERO
+                        <span class="brand-subtitle">Living Atelier</span>
+                    </div>
+                </a>
+
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link-item">Home</a></li>
+                        <li><a href="shop.html" class="nav-link-item">Shop</a></li>
+                        <li><a href="shop.html?category=Sofas" class="nav-link-item">Sofas</a></li>
+                        <li><a href="shop.html?category=Beds" class="nav-link-item">Beds</a></li>
+                        <li><a href="shop.html?category=Dining+Tables" class="nav-link-item">Dining</a></li>
+                        <li><a href="index.html#why-us" class="nav-link-item">About Us</a></li>
+                        <li><a href="#footer" class="nav-link-item">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="nav-icon-btn btn-open-search" title="Search Collection">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+
+                    <a href="wishlist.html" class="nav-icon-btn" title="Saved Wishlist">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        <span class="badge-counter wishlist-count-badge" style="display: none;">0</span>
+                    </a>
+
+                    <a href="cart.html" class="nav-icon-btn" title="Shopping Cart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <span class="badge-counter cart-count-badge" style="display: none;">0</span>
+                    </a>
+
+                    <div id="nav-user-container"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-menu-drawer">
+        <div>
+            <div class="d-flex align-items-center justify-content-between pb-3 border-bottom">
+                <a href="index.html" class="brand-logo fs-4">
+                    <div class="brand-monogram" style="width:32px; height:32px; font-size:1rem;">V</div>
+                    VIVERO
+                </a>
+                <button id="mobile-menu-close" style="font-size: 1.5rem; color: var(--color-muted);">&times;</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop All Pieces</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="cart.html">Shopping Cart</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="admin.html">Admin Portal</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mobile-overlay" id="mobile-menu-overlay"></div>
+
+    <!-- Wishlist Main Wrapper -->
+    <main class="container py-5 my-3">
+        <nav class="shop-breadcrumbs mb-4">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span class="text-secondary fw-semibold">Saved Pieces</span>
+        </nav>
+
+        <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+            <div>
+                <h1 class="serif-title fs-2 mb-1">Your Curated Wishlist</h1>
+                <p class="text-muted">Save your favorite artisanal pieces and move them to your bag when you're ready.</p>
+            </div>
+            <a href="shop.html" class="btn btn-luxury-outline">Explore More Pieces &rarr;</a>
+        </div>
+
+        <div id="wishlist-content-container">
+            <!-- Injected by JS -->
+        </div>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer" id="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo text-white">
+                        <div class="brand-monogram">V</div>
+                        VIVERO
+                    </a>
+                    <p>Elevating modern interiors through organic Scandinavian design, authentic Italian marble, and generational woodworking craftsmanship.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop All Pieces</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="orders.html">My Orders</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Atelier</h4>
+                    <ul class="footer-links-list">
+                        <li class="text-white small">Studio 14, Heritage Quarters, MG Road, Bengaluru</li>
+                        <li class="text-white small mt-1">+91 1800 240 8899</li>
+                        <li class="small text-muted mt-2">concierge@viveroluxury.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 VIVERO Luxury Living Private Limited. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Search Modal -->
+    <div class="modal-backdrop-custom" id="global-search-modal">
+        <div class="modal-content-custom">
+            <span class="modal-close-btn" id="search-modal-close">&times;</span>
+            <div class="mb-4">
+                <span class="section-subtitle">Catalog Search</span>
+                <h3 class="serif-title">Search Living Pieces</h3>
+            </div>
+            <input type="text" id="global-search-input" class="form-control form-control-lg" placeholder="Type piece name or category...">
+            <div id="search-modal-results" class="mt-3"></div>
+        </div>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Wishlist Page Script -->
+    <script>
+        const WishlistPageController = {
+            init() {
+                this.render();
+            },
+
+            render() {
+                const container = document.getElementById('wishlist-content-container');
+                const savedIds = Wishlist.getItems();
+
+                if (savedIds.length === 0) {
+                    container.innerHTML = `
+                        <div class="cart-table-card text-center py-5">
+                            <div class="empty-icon-circle mb-3" style="width: 70px; height: 70px; border-radius: 50%; background: var(--color-sand); display: inline-flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                            </div>
+                            <h2 class="serif-title fs-3 mb-2">Your Wishlist is Empty</h2>
+                            <p class="text-muted mb-4">Click the heart icon on any piece across our collection to save it to your wishlist.</p>
+                            <a href="shop.html" class="btn btn-luxury-primary btn-lg">Explore Masterpieces</a>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const savedProducts = savedIds.map(id => ProductDB.getById(id)).filter(Boolean);
+
+                container.innerHTML = `
+                    <div class="products-grid">
+                        ${savedProducts.map(p => `
+                            <div class="product-card" id="wishlist-card-${p.id}">
+                                <div class="product-card-image-box position-relative">
+                                    <a href="product.html?id=${p.id}" class="d-block product-card-image-link">
+                                        <img src="${p.images[0]}" alt="${p.name}" class="product-card-img" onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80'">
+                                    </a>
+
+                                    <button class="product-wishlist-btn active" onclick="WishlistPageController.remove('${p.id}')" title="Remove from wishlist">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#C2847A" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                                    </button>
+                                </div>
+
+                                <div class="product-card-info">
+                                    <div class="product-card-category">${p.category}</div>
+                                    <h3 class="product-card-title">
+                                        <a href="product.html?id=${p.id}">${p.name}</a>
+                                    </h3>
+                                    <div class="product-card-pricing mb-3">
+                                        <span class="product-price">${ProductDB.formatINR(p.price)}</span>
+                                        ${p.originalPrice > p.price ? `<span class="product-orig-price">${ProductDB.formatINR(p.originalPrice)}</span>` : ''}
+                                    </div>
+
+                                    <button class="btn btn-luxury-primary w-100 btn-sm" onclick="WishlistPageController.moveToCart('${p.id}')">
+                                        Move to Shopping Bag &rarr;
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            },
+
+            remove(productId) {
+                Wishlist.remove(productId);
+                this.render();
+            },
+
+            moveToCart(productId) {
+                Wishlist.moveToCart(productId);
+                this.render();
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            WishlistPageController.init();
+        });
+    </script>
+</body>
+</html>
+

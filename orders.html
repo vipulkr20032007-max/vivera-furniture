@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders & White Glove Tracking • VIVERO Living Atelier</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <span>✨ <strong>COMPLIMENTARY WHITE-GLOVE FREIGHT</strong> on all curated orders above ₹10,000 | Use Code: <strong>LUXURY10</strong></span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="nav-inner">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-monogram">V</div>
+                    <div>
+                        VIVERO
+                        <span class="brand-subtitle">Living Atelier</span>
+                    </div>
+                </a>
+
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link-item">Home</a></li>
+                        <li><a href="shop.html" class="nav-link-item">Shop</a></li>
+                        <li><a href="shop.html?category=Sofas" class="nav-link-item">Sofas</a></li>
+                        <li><a href="shop.html?category=Beds" class="nav-link-item">Beds</a></li>
+                        <li><a href="shop.html?category=Dining+Tables" class="nav-link-item">Dining</a></li>
+                        <li><a href="index.html#why-us" class="nav-link-item">About Us</a></li>
+                        <li><a href="#footer" class="nav-link-item">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="nav-icon-btn btn-open-search" title="Search Collection">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+
+                    <a href="wishlist.html" class="nav-icon-btn" title="Saved Wishlist">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                        <span class="badge-counter wishlist-count-badge" style="display: none;">0</span>
+                    </a>
+
+                    <a href="cart.html" class="nav-icon-btn" title="Shopping Cart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <span class="badge-counter cart-count-badge" style="display: none;">0</span>
+                    </a>
+
+                    <div id="nav-user-container"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-menu-drawer">
+        <div>
+            <div class="d-flex align-items-center justify-content-between pb-3 border-bottom">
+                <a href="index.html" class="brand-logo fs-4">
+                    <div class="brand-monogram" style="width:32px; height:32px; font-size:1rem;">V</div>
+                    VIVERO
+                </a>
+                <button id="mobile-menu-close" style="font-size: 1.5rem; color: var(--color-muted);">&times;</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop All Pieces</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="cart.html">Shopping Cart</a></li>
+                <li><a href="orders.html">My Orders</a></li>
+                <li><a href="admin.html">Admin Portal</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mobile-overlay" id="mobile-menu-overlay"></div>
+
+    <!-- Orders Main Content -->
+    <main class="container py-5 my-3">
+        <!-- New Order Alert Banner (if redirected after purchase) -->
+        <div id="new-order-banner" class="bg-sand border p-4 rounded mb-4" style="display: none; border-left: 4px solid var(--color-accent) !important;">
+            <div class="d-flex align-items-center gap-3">
+                <div style="width: 44px; height: 44px; border-radius: 50%; background: #E2F0D9; color: var(--color-success); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                    <h3 class="serif-title fs-5 mb-1">Congratulations! Your Order <span id="banner-order-id" class="font-monospace text-accent"></span> has been placed.</h3>
+                    <p class="text-muted small mb-0">Our atelier concierge will coordinate with you via phone for your preferred white-glove delivery date.</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="shop-breadcrumbs mb-4">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span class="text-secondary fw-semibold">Order History & Tracking</span>
+        </nav>
+
+        <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+            <div>
+                <h1 class="serif-title fs-2 mb-1">Your Order Portfolio</h1>
+                <p class="text-muted">Review current white-glove logistics updates, invoices, and past delivered pieces.</p>
+            </div>
+            <a href="shop.html" class="btn btn-luxury-primary">Shop More Furniture &rarr;</a>
+        </div>
+
+        <!-- Orders List Container -->
+        <div id="orders-list-container" class="d-flex flex-column gap-4">
+            <!-- Populated dynamically -->
+        </div>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer" id="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo text-white">
+                        <div class="brand-monogram">V</div>
+                        VIVERO
+                    </a>
+                    <p>Elevating modern interiors through organic Scandinavian design, authentic Italian marble, and generational woodworking craftsmanship.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop All Pieces</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="orders.html">My Orders</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Concierge</h4>
+                    <ul class="footer-links-list">
+                        <li class="text-white small">Studio 14, Heritage Quarters, MG Road, Bengaluru</li>
+                        <li class="text-white small mt-1">+91 1800 240 8899</li>
+                        <li class="small text-muted mt-2">concierge@viveroluxury.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 VIVERO Luxury Living Private Limited. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Search Modal -->
+    <div class="modal-backdrop-custom" id="global-search-modal">
+        <div class="modal-content-custom">
+            <span class="modal-close-btn" id="search-modal-close">&times;</span>
+            <div class="mb-4">
+                <span class="section-subtitle">Catalog Search</span>
+                <h3 class="serif-title">Search Living Pieces</h3>
+            </div>
+            <input type="text" id="global-search-input" class="form-control form-control-lg" placeholder="Type piece name or category...">
+            <div id="search-modal-results" class="mt-3"></div>
+        </div>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Orders View Logic -->
+    <script>
+        const OrdersViewController = {
+            init() {
+                this.checkNewOrderParam();
+                this.renderOrders();
+            },
+
+            checkNewOrderParam() {
+                const params = new URLSearchParams(window.location.search);
+                const newId = params.get('newOrder');
+                if (newId) {
+                    const banner = document.getElementById('new-order-banner');
+                    const orderIdEl = document.getElementById('banner-order-id');
+                    if (banner && orderIdEl) {
+                        orderIdEl.textContent = newId;
+                        banner.style.display = 'block';
+                    }
+                }
+            },
+
+            renderOrders() {
+                const container = document.getElementById('orders-list-container');
+                const allOrders = JSON.parse(localStorage.getItem(STORAGE_KEYS.ORDERS)) || [];
+                const user = Auth.getCurrentUser();
+
+                // If user is logged in as customer, filter by their email; if admin or guest, show all/relevant orders
+                let userOrders = allOrders;
+                if (user && user.role === 'customer') {
+                    userOrders = allOrders.filter(o => o.customer.email.toLowerCase() === user.email.toLowerCase());
+                }
+
+                if (userOrders.length === 0) {
+                    container.innerHTML = `
+                        <div class="cart-table-card text-center py-5">
+                            <div class="empty-icon-circle mb-3" style="width: 70px; height: 70px; border-radius: 50%; background: var(--color-sand); display: inline-flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+                            </div>
+                            <h2 class="serif-title fs-3 mb-2">No Past Orders Found</h2>
+                            <p class="text-muted mb-4">You have not booked any bespoke furniture orders with VIVERO yet.</p>
+                            <a href="shop.html" class="btn btn-luxury-primary btn-lg">Explore Catalogue</a>
+                        </div>
+                    `;
+                    return;
+                }
+
+                container.innerHTML = userOrders.map(order => `
+                    <div class="admin-table-card p-4">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 pb-3 border-bottom mb-3">
+                            <div>
+                                <span class="text-muted small">ORDER NUMBER</span>
+                                <div class="font-monospace fw-bold fs-5 text-accent">${order.id}</div>
+                                <span class="text-muted small">Placed on ${new Date(order.date).toLocaleDateString('en-IN', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                            </div>
+
+                            <div class="text-end">
+                                <span class="status-badge status-${order.status.toLowerCase()} fs-6 mb-1">${order.status}</span>
+                                <div class="small text-muted">${order.paymentMethod}</div>
+                            </div>
+                        </div>
+
+                        <!-- Items in this order -->
+                        <div class="mb-3">
+                            ${order.items.map(item => `
+                                <div class="d-flex align-items-center justify-content-between py-2 border-bottom">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <img src="${item.image}" alt="${item.name}" style="width: 54px; height: 54px; object-fit: cover; border-radius: 8px;">
+                                        <div>
+                                            <a href="product.html?id=${item.productId}" class="fw-semibold text-dark">${item.name}</a>
+                                            <div class="small text-muted">Finish: ${item.color || 'Standard'} &bull; Qty: ${item.quantity}</div>
+                                        </div>
+                                    </div>
+                                    <div class="fw-bold font-serif">
+                                        ${ProductDB.formatINR(item.price * item.quantity)}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <!-- Summary footer -->
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 pt-2">
+                            <div>
+                                <span class="small text-muted d-block">Delivery Destination:</span>
+                                <small class="fw-medium">${order.customer.address}, ${order.customer.city}, ${order.customer.state} - ${order.customer.pincode}</small>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="text-end">
+                                    <span class="small text-muted d-block">Total Paid:</span>
+                                    <span class="fs-5 fw-bold text-secondary font-serif">${ProductDB.formatINR(order.total)}</span>
+                                </div>
+
+                                ${order.status !== 'Delivered' && order.status !== 'Cancelled' ? `
+                                    <button class="btn btn-sm btn-outline-danger" onclick="OrdersViewController.cancelOrder('${order.id}')">
+                                        Cancel Order
+                                    </button>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            },
+
+            cancelOrder(orderId) {
+                if (confirm(`Are you sure you want to cancel order #${orderId}?`)) {
+                    const allOrders = JSON.parse(localStorage.getItem(STORAGE_KEYS.ORDERS)) || [];
+                    const index = allOrders.findIndex(o => o.id === orderId);
+                    if (index > -1) {
+                        allOrders[index].status = 'Cancelled';
+                        localStorage.setItem(STORAGE_KEYS.ORDERS, JSON.stringify(allOrders));
+                        Cart.showToast(`Order #${orderId} has been cancelled.`, 'info');
+                        this.renderOrders();
+                    }
+                }
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            OrdersViewController.init();
+        });
+    </script>
+</body>
+</html>
+

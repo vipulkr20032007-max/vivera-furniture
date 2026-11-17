@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout & White Glove Booking • VIVERO Living Atelier</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <span>✨ <strong>COMPLIMENTARY WHITE-GLOVE FREIGHT</strong> on all curated orders above ₹10,000 | Use Code: <strong>LUXURY10</strong></span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-monogram">V</div>
+                    <div>
+                        VIVERO
+                        <span class="brand-subtitle">Living Atelier</span>
+                    </div>
+                </a>
+
+                <div class="d-flex align-items-center gap-3">
+                    <span class="small text-muted d-none d-md-inline">🔒 Safe & Secure Client Checkout</span>
+                    <a href="cart.html" class="btn btn-luxury-outline btn-sm">Return to Bag</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Main Content -->
+    <main class="container checkout-page-wrapper" id="checkout-page-container">
+        <!-- Breadcrumbs -->
+        <nav class="shop-breadcrumbs mb-4">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="cart.html">Shopping Bag</a>
+            <span>/</span>
+            <span class="text-secondary fw-semibold">Checkout</span>
+        </nav>
+
+        <h1 class="serif-title fs-2 mb-4">White-Glove Order Checkout</h1>
+
+        <form id="checkout-form">
+            <div class="checkout-layout">
+                <!-- Left Column: Shipping & Payment Details -->
+                <div>
+                    <!-- Step 1: Customer Contact & Delivery Address -->
+                    <div class="checkout-form-card mb-4">
+                        <h2 class="checkout-section-title font-serif">1. Delivery Destination & Client Information</h2>
+                        
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label class="form-label" for="checkout-name">Full Name *</label>
+                                <input type="text" id="checkout-name" class="form-control" placeholder="e.g. Piyush Sharma" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="checkout-email">Email Address *</label>
+                                <input type="email" id="checkout-email" class="form-control" placeholder="e.g. customer@gmail.com" required>
+                                <small class="text-muted">Order confirmation will be sent here.</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="checkout-phone">Mobile Number *</label>
+                            <input type="tel" id="checkout-phone" class="form-control" placeholder="e.g. +91 98765 43210" required>
+                            <small class="text-muted">Required for White-Glove delivery scheduling call.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="checkout-address">Street Address, Suite / Flat *</label>
+                            <textarea id="checkout-address" class="form-control" rows="2" placeholder="e.g. 42, Heritage Enclave, 4th Floor, MG Road" required></textarea>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label class="form-label" for="checkout-city">City *</label>
+                                <input type="text" id="checkout-city" class="form-control" placeholder="e.g. Bengaluru" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="checkout-state">State *</label>
+                                <select id="checkout-state" class="form-control" required>
+                                    <option value="">Select State</option>
+                                    <option value="Karnataka" selected>Karnataka</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="max-width: 240px;">
+                            <label class="form-label" for="checkout-pin">Postal PIN Code *</label>
+                            <input type="text" id="checkout-pin" class="form-control" placeholder="6-digit PIN" maxlength="6" value="560001" required>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Payment Options -->
+                    <div class="checkout-form-card">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h2 class="checkout-section-title font-serif mb-0 border-0 pb-0">2. Payment Method</h2>
+                            <span class="badge bg-sand text-dark">Demo Sandbox</span>
+                        </div>
+                        <p class="text-muted small mb-3">Select your preferred payment method. <em>(Note: Academic frontend demonstration mode - no actual currency transfer occurs).</em></p>
+
+                        <div class="payment-selector-group">
+                            <!-- Option A: Cash on Delivery -->
+                            <label class="payment-choice-card">
+                                <input type="radio" name="paymentMethod" value="cod" checked>
+                                <div class="choice-label flex-grow-1">
+                                    <div class="fw-bold">Cash on Delivery / Pay on Assembly</div>
+                                    <small class="text-muted">Pay comfortably via UPI/Cash after in-home installation is inspected.</small>
+                                </div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="12" x="2" y="6" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg>
+                            </label>
+
+                            <!-- Option B: UPI -->
+                            <label class="payment-choice-card">
+                                <input type="radio" name="paymentMethod" value="upi">
+                                <div class="choice-label flex-grow-1">
+                                    <div class="fw-bold">Instant UPI (GPay, PhonePe, Paytm, BHIM)</div>
+                                    <small class="text-muted">Pay seamlessly via QR Code or Virtual Payment Address (VPA).</small>
+                                </div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                            </label>
+
+                            <!-- Option C: Credit/Debit Card -->
+                            <label class="payment-choice-card">
+                                <input type="radio" name="paymentMethod" value="card">
+                                <div class="choice-label flex-grow-1">
+                                    <div class="fw-bold">Credit / Debit Card</div>
+                                    <small class="text-muted">Visa, MasterCard, American Express, RuPay accepted.</small>
+                                </div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                            </label>
+                        </div>
+
+                        <!-- Dynamic Sub-Panel: UPI -->
+                        <div id="payment-section-upi" class="bg-sand p-3 rounded mb-3" style="display: none;">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div style="background: white; padding: 8px; border-radius: 8px;">
+                                    <!-- Mock QR Code SVG -->
+                                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="fs-6 fw-bold mb-1">Scan QR or Enter UPI VPA</h4>
+                                    <small class="text-muted">Supports all Indian banks & major UPI apps.</small>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <input type="text" id="checkout-upi-id" class="form-control" placeholder="username@okhdfcbank" value="customer@okhdfcbank">
+                                <button type="button" class="btn btn-luxury-primary btn-sm" id="btn-verify-upi">Verify</button>
+                            </div>
+                            <div id="upi-verify-feedback" class="mt-1"></div>
+                        </div>
+
+                        <!-- Dynamic Sub-Panel: Card -->
+                        <div id="payment-section-card" class="bg-sand p-3 rounded mb-3" style="display: none;">
+                            <h4 class="fs-6 fw-bold mb-2">Simulated Card Details</h4>
+                            <div class="form-group">
+                                <label class="form-label small">Card Number</label>
+                                <input type="text" id="card-number" class="form-control" placeholder="4111 2222 3333 4444" value="4111 2222 3333 4444">
+                            </div>
+                            <div class="form-grid-2">
+                                <div class="form-group">
+                                    <label class="form-label small">Expiry (MM/YY)</label>
+                                    <input type="text" id="card-expiry" class="form-control" placeholder="12/28" value="12/28">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label small">CVV</label>
+                                    <input type="password" id="card-cvv" class="form-control" placeholder="123" maxlength="3" value="789">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-luxury-primary btn-lg w-100 mt-3" id="btn-place-order">
+                            Confirm & Place Order &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Sticky Order Summary -->
+                <aside>
+                    <div class="cart-summary-sidebar">
+                        <h3 class="serif-title fs-5 mb-3">Selected Living Pieces</h3>
+                        <div id="checkout-order-items" class="mb-4">
+                            <!-- Injected by checkout.js -->
+                        </div>
+                        <div id="checkout-price-breakdown">
+                            <!-- Injected by checkout.js -->
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </form>
+    </main>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal-backdrop-custom" id="order-confirmation-modal">
+        <div class="modal-content-custom text-center">
+            <div style="width: 72px; height: 72px; border-radius: 50%; background-color: #E2F0D9; color: var(--color-success); display: inline-flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            
+            <span class="section-subtitle">Order Confirmed</span>
+            <h2 class="serif-title fs-2 mb-2">Thank You, <span id="conf-customer-name">Piyush</span>!</h2>
+            <p class="text-muted mb-4">Your bespoke living order has been securely reserved and scheduled with our master craftsmen.</p>
+
+            <div class="bg-sand p-3 rounded text-start mb-4">
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Order ID:</span>
+                    <strong class="font-monospace text-accent" id="conf-order-id">ORD-2026-00000</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Total Payable:</span>
+                    <strong id="conf-order-total">₹0</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Payment Mode:</span>
+                    <span id="conf-payment-method">Cash on Delivery</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span class="text-muted">Delivery Address:</span>
+                    <span id="conf-address" class="text-truncate" style="max-width: 240px;">MG Road, Bengaluru</span>
+                </div>
+            </div>
+
+            <div class="d-flex gap-3 justify-content-center">
+                <a href="orders.html" class="btn btn-luxury-primary">Track My Order</a>
+                <a href="shop.html" class="btn btn-luxury-outline">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            Checkout.init();
+        });
+    </script>
+</body>
+</html>
+

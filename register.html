@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account • VIVERO Living Atelier</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="brand-logo">
+                    <div class="brand-monogram">V</div>
+                    <div>
+                        VIVERO
+                        <span class="brand-subtitle">Living Atelier</span>
+                    </div>
+                </a>
+
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link-item">Home</a></li>
+                        <li><a href="shop.html" class="nav-link-item">Catalogue</a></li>
+                    </ul>
+                </nav>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="btn btn-luxury-outline btn-sm">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Register Form Container -->
+    <main class="auth-page-wrapper">
+        <div class="auth-card" style="max-width: 520px;">
+            <div class="text-center mb-4">
+                <span class="section-subtitle">Private Registration</span>
+                <h1 class="serif-title fs-2 mb-2">Join VIVERO Living</h1>
+                <p class="text-muted small">Unlock private catalog releases, bespoke wood finishes, and white-glove concierge perks.</p>
+            </div>
+
+            <!-- Error / Feedback Alert Box -->
+            <div id="register-alert-box" class="alert p-3 rounded mb-3 small" style="display: none;"></div>
+
+            <form id="register-form">
+                <div class="form-group">
+                    <label class="form-label" for="reg-name">Full Name *</label>
+                    <input type="text" id="reg-name" class="form-control" placeholder="e.g. Piyush Sharma" required autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="reg-email">Email Address *</label>
+                    <input type="email" id="reg-email" class="form-control" placeholder="e.g. piyush@example.com" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="reg-phone">Mobile Number *</label>
+                    <input type="tel" id="reg-phone" class="form-control" placeholder="e.g. 9876543210" required autocomplete="tel">
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label class="form-label" for="reg-password">Password (min 6 chars) *</label>
+                        <input type="password" id="reg-password" class="form-control" placeholder="••••••••" required autocomplete="new-password">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="reg-confirm-password">Confirm Password *</label>
+                        <input type="password" id="reg-confirm-password" class="form-control" placeholder="••••••••" required autocomplete="new-password">
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <small class="text-muted">By creating an account, you agree to VIVERO's Client Charter and In-Home Trial terms.</small>
+                </div>
+
+                <button type="submit" class="btn btn-luxury-primary btn-lg w-100 mb-3" id="btn-register-submit">
+                    Create Atelier Account &rarr;
+                </button>
+
+                <div class="text-center pt-3 border-top">
+                    <span class="small text-muted">Already a registered client? </span>
+                    <a href="login.html" class="small fw-bold text-secondary text-decoration-underline">Sign In Here</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer" id="footer">
+        <div class="container text-center">
+            <p class="small text-muted mb-0">&copy; 2026 VIVERO Luxury Living. Frontend E-Commerce Demonstration.</p>
+        </div>
+    </footer>
+
+    <!-- Core Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Registration Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('register-form');
+            const alertBox = document.getElementById('register-alert-box');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alertBox.style.display = 'none';
+
+                const name = document.getElementById('reg-name').value.trim();
+                const email = document.getElementById('reg-email').value.trim();
+                const phone = document.getElementById('reg-phone').value.trim();
+                const password = document.getElementById('reg-password').value;
+                const confirmPassword = document.getElementById('reg-confirm-password').value;
+
+                const res = Auth.register({ name, email, phone, password, confirmPassword });
+
+                if (res.success) {
+                    alertBox.className = 'p-3 rounded mb-3 small bg-success text-white';
+                    alertBox.textContent = res.message;
+                    alertBox.style.display = 'block';
+
+                    Cart.showToast(res.message, 'success');
+
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1200);
+                } else {
+                    alertBox.className = 'p-3 rounded mb-3 small bg-danger text-white';
+                    alertBox.textContent = res.message;
+                    alertBox.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

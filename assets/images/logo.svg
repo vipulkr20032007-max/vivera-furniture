@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <rect x="5" y="10" width="40" height="40" rx="8" fill="#3D3028" stroke="#EDE5D8" stroke-width="1.5" />
+  <text x="25" y="38" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="700" fill="#EDE5D8" text-anchor="middle">V</text>
+  <text x="56" y="34" font-family="'Playfair Display', Georgia, serif" font-size="22" font-weight="700" fill="#3D3028" letter-spacing="3">VIVERO</text>
+  <text x="58" y="47" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" fill="#536B50" letter-spacing="4">LIVING ATELIER</text>
+</svg>
+
